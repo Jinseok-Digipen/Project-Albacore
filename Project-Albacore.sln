@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Albacore-Graphic", "Albacore-Graphic\Albacore-Graphic.vcxproj", "{BB885617-0D2A-46CB-8A75-0378A273BD2E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Albacore-Game", "Albacore-Game\Albacore-Game.vcxproj", "{6864074C-201E-4409-9533-A808FFC1E98C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB885617-0D2A-46CB-8A75-0378A273BD2E}.Debug|x64.ActiveCfg = Debug|x64
+		{BB885617-0D2A-46CB-8A75-0378A273BD2E}.Debug|x64.Build.0 = Debug|x64
+		{BB885617-0D2A-46CB-8A75-0378A273BD2E}.Release|x64.ActiveCfg = Release|x64
+		{BB885617-0D2A-46CB-8A75-0378A273BD2E}.Release|x64.Build.0 = Release|x64
+		{6864074C-201E-4409-9533-A808FFC1E98C}.Debug|x64.ActiveCfg = Debug|x64
+		{6864074C-201E-4409-9533-A808FFC1E98C}.Debug|x64.Build.0 = Debug|x64
+		{6864074C-201E-4409-9533-A808FFC1E98C}.Release|x64.ActiveCfg = Release|x64
+		{6864074C-201E-4409-9533-A808FFC1E98C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78101EC1-7349-4539-9F44-3F7ECE83CC80}
+	EndGlobalSection
+EndGlobal
