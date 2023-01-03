@@ -1,5 +1,5 @@
 #include<iostream>
-#include<window.h>
+#include<window/window.h>
 
 int main()
 {

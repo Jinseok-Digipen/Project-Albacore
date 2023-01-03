@@ -14,12 +14,12 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\window.cpp">
+    <ClCompile Include="source\window\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\window.h">
+    <ClInclude Include="include\window\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
