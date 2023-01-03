@@ -53,11 +53,11 @@ namespace Albacore
 
 여기보면 알겟지만 Albacore-Graphic 는 전처리기에 DLL_EXPORTS가 정의되어 았음 DLL_EXPORT가 전역적으로 정의 되어 있기 때문에 Albacore-Graphic은   ```LBACORE_GRAPHIC_DECLSPEC``` 정의되어 있으면 이파일들을 바깥으로 노출시킴  전처리기 정의를 하지 않아 시간을 꽤나 많이 잡아먹었었음 
 
+![](C:\Users\ttuan\Desktop\셋팅.png)
 
 
 
-
-
+warning Level4 + Treat Warning As Erros 는 국룰임 
 
 
 
