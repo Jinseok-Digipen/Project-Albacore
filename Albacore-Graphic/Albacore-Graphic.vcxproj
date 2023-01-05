@@ -12,11 +12,31 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\external\include\GLAD\src\glad.c" />
+    <ClCompile Include="include\check\check.cpp" />
     <ClCompile Include="include\color\color.cpp" />
+    <ClCompile Include="include\Imgui\ImguiHelper.cpp" />
+    <ClCompile Include="source\Imgui\imgui.cpp" />
+    <ClCompile Include="source\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="source\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="source\Imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="source\Imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="source\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="source\Imgui\imgui_widgets.cpp" />
     <ClCompile Include="source\window\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\check\check.h" />
     <ClInclude Include="include\color\color.h" />
+    <ClInclude Include="include\Imgui\imconfig.h" />
+    <ClInclude Include="include\Imgui\imgui.h" />
+    <ClInclude Include="include\Imgui\ImguiHelper.h" />
+    <ClInclude Include="include\Imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="include\Imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="include\Imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="include\Imgui\imgui_internal.h" />
+    <ClInclude Include="include\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="include\Imgui\imstb_textedit.h" />
+    <ClInclude Include="include\Imgui\imstb_truetype.h" />
     <ClInclude Include="include\window\window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

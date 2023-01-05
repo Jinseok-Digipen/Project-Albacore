@@ -2,7 +2,9 @@
 #include<GLAD/include/glad/glad.h>
 #include<GLFW/glfw3.h>
 #include<iostream>
-
+#include<check/check.h>
+#include<Imgui/ImguiHelper.h>
+#include<Imgui/imgui.h>
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -39,14 +41,35 @@ bool  Albacore::Window::create_window()
         return false;
     }
 
+   
+    ImGuiHelper::Initialize(WindowPtr);
+
+
+
+
+#ifdef _DEBUG
     
+    glCheck(GLubyte const* str_ven = glGetString(GL_VENDOR));
+    std::cout << "GL_VENDOR: " << str_ven << '\n';
+#endif // _DEBUG
+
+
+  
     return true;
 }
 
 void Albacore::Window::update_window()
 {
-    glfwSwapBuffers(WindowPtr);
+   
     glfwPollEvents();
+
+    ImGuiHelper::Begin();
+    ImGui::ShowDemoWindow();
+    ImGuiHelper::End(WindowPtr);
+
+
+    glfwSwapBuffers(WindowPtr);
+    
     
 }
 
