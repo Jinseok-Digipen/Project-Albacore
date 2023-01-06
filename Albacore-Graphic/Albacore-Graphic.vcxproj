@@ -15,8 +15,14 @@
     <ClCompile Include="include\check\check.cpp" />
     <ClCompile Include="include\color\color.cpp" />
     <ClCompile Include="include\Imgui\ImguiHelper.cpp" />
+    <ClCompile Include="source\GLIndexBuffer\GLIndexBuffer.cpp" />
+    <ClCompile Include="source\GLVertexArrayBuffer\GLVertexArray.cpp" />
+    <ClCompile Include="source\GLVertexBuffer\GLVertexBuffer.cpp" />
     <ClCompile Include="source\Imgui\imgui.cpp" />
-    <ClCompile Include="source\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="source\Imgui\imgui_demo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="source\Imgui\imgui_draw.cpp" />
     <ClCompile Include="source\Imgui\imgui_impl_glfw.cpp" />
     <ClCompile Include="source\Imgui\imgui_impl_opengl3.cpp" />
@@ -27,6 +33,9 @@
   <ItemGroup>
     <ClInclude Include="include\check\check.h" />
     <ClInclude Include="include\color\color.h" />
+    <ClInclude Include="include\GLIndexBuffer\GLIndexBuffer.h" />
+    <ClInclude Include="include\GLVertexArrayBuffer\GLVertexArray.h" />
+    <ClInclude Include="include\GLVertexBuffer\GLVertexBuffer.h" />
     <ClInclude Include="include\Imgui\imconfig.h" />
     <ClInclude Include="include\Imgui\imgui.h" />
     <ClInclude Include="include\Imgui\ImguiHelper.h" />
@@ -83,7 +92,7 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;DLL_EXPORTS;ALBACOREGRAPHIC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLL_EXPORTS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -103,7 +112,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;DLL_EXPORTS;ALBACOREGRAPHIC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLL_EXPORTS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>

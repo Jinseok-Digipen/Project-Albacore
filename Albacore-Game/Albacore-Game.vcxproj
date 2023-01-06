@@ -44,10 +44,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\Albacore-Graphic\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Albacore-Graphic\include;$(SolutionDir)\external\include;$(IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)\Albacore-Graphic\source\imgui</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)\Albacore-Graphic\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Albacore-Graphic\include;$(SolutionDir)\external\include;$(IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)\Albacore-Graphic\source\imgui</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

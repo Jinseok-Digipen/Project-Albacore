@@ -18,6 +18,15 @@
     <Filter Include="Imgui">
       <UniqueIdentifier>{c3a7d245-850b-4071-9ee7-3f47ecf51163}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GLVertexBuffer">
+      <UniqueIdentifier>{822e83cd-927d-4015-a91b-d9c66c5bb749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLVertexArrayObject">
+      <UniqueIdentifier>{0412b015-bdc7-489a-9169-2f9a64c14e81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLVertexBufferObject">
+      <UniqueIdentifier>{8a053890-c93c-422c-8a6a-3bbfd04c6daa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\external\include\GLAD\src\glad.c">
@@ -55,6 +64,15 @@
     </ClCompile>
     <ClCompile Include="include\Imgui\ImguiHelper.cpp">
       <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GLIndexBuffer\GLIndexBuffer.cpp">
+      <Filter>GLVertexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GLVertexArrayBuffer\GLVertexArray.cpp">
+      <Filter>GLVertexArrayObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GLVertexBuffer\GLVertexBuffer.cpp">
+      <Filter>GLVertexBufferObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +114,15 @@
     </ClInclude>
     <ClInclude Include="include\Imgui\ImguiHelper.h">
       <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLIndexBuffer\GLIndexBuffer.h">
+      <Filter>GLVertexBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLVertexArrayBuffer\GLVertexArray.h">
+      <Filter>GLVertexArrayObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLVertexBuffer\GLVertexBuffer.h">
+      <Filter>GLVertexBufferObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
