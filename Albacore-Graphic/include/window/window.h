@@ -11,6 +11,7 @@
 #include<Imgui/imgui.h>
 #include<string>
 #include<GLShader/GLShader.h>
+#include<GLVertexArrayBuffer/GLVertexArray.h>
 #ifdef  DLL_EXPORTS
 #define ALBACORE_GRAPHIC_DECLSPEC __declspec(dllexport)
 #else
@@ -32,9 +33,10 @@ namespace Albacore
 		 ALBACORE_GRAPHIC_DECLSPEC ~Window();
 		 inline static ALBACORE_GRAPHIC_DECLSPEC GLFWwindow* WindowPtr = nullptr;
 	private:
-		inline static ALBACORE_GRAPHIC_DECLSPEC  GLShader shader;
+		inline static ALBACORE_GRAPHIC_DECLSPEC  std::vector<GLShader>shaders;
+		inline static ALBACORE_GRAPHIC_DECLSPEC  std::vector<GLVertexArray>model;
 		inline static ALBACORE_GRAPHIC_DECLSPEC  std::unordered_map <std::string, std::string>settings_descriptions;
-		
+		inline static ALBACORE_GRAPHIC_DECLSPEC  std::map<std::string, bool>shader_options;
 	};
 }
 

@@ -60,10 +60,11 @@ struct GLPrimitive
     };
 };
 
-class [[nodiscard]] GLVertexArray
+class [[nodiscard]]  GLVertexArray
 {
-    GLHandle                    vertex_array_handle = 0;
-    std::vector<GLVertexBuffer> vertex_buffers;
+
+    GLHandle                    vertex_array_handle=0;
+    std::vector<GLVertexBuffer>  vertex_buffers;
     GLIndexBuffer               index_buffer;
     GLsizei                     num_indices       = 0;
     GLIndexElement::Type        indices_type      = GLIndexElement::None;

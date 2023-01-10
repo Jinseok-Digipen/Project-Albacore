@@ -7,17 +7,17 @@
 
 #include<GLVertexArrayBuffer/GLVertexArray.h>
 #include<iostream>
-
+#include<check/check.h>
 
 GLVertexArray:: ~GLVertexArray()
 {
-	glDeleteBuffers(1, &vertex_array_handle);
+	glCheck(glDeleteBuffers(1, &vertex_array_handle));
 }
 
 GLVertexArray::GLVertexArray(GLPrimitive::Type the_primitive_pattern)
 	:primitive_pattern(the_primitive_pattern)
 {
-	glCreateVertexArrays(1, &vertex_array_handle);
+	glCheck(glCreateVertexArrays(1, &vertex_array_handle));
 
 }
 

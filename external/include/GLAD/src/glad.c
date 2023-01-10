@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <GLAD/include/glad/glad.h>
-
+#include <stdio.h>
 static void* get_proc(const char *namez);
 
 #if defined(_WIN32) || defined(__CYGWIN__)
@@ -1720,6 +1720,11 @@ static void load_GL_VERSION_4_5(GLADloadproc load) {
 	glad_glGetnHistogram = (PFNGLGETNHISTOGRAMPROC)load("glGetnHistogram");
 	glad_glGetnMinmax = (PFNGLGETNMINMAXPROC)load("glGetnMinmax");
 	glad_glTextureBarrier = (PFNGLTEXTUREBARRIERPROC)load("glTextureBarrier");
+
+	if (glad_glCreateVertexArrays == NULL)
+	{
+		printf("hi");
+	}
 }
 static int find_extensionsGL(void) {
 	if (!get_exts()) return 0;
