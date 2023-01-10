@@ -27,6 +27,9 @@
     <Filter Include="GLVertexBufferObject">
       <UniqueIdentifier>{8a053890-c93c-422c-8a6a-3bbfd04c6daa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GLShader">
+      <UniqueIdentifier>{d1ffe762-ac04-4570-864d-5a9a59c159f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\external\include\GLAD\src\glad.c">
@@ -73,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="source\GLVertexBuffer\GLVertexBuffer.cpp">
       <Filter>GLVertexBufferObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GLShader\GLShader.cpp">
+      <Filter>GLShader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +129,9 @@
     </ClInclude>
     <ClInclude Include="include\GLVertexBuffer\GLVertexBuffer.h">
       <Filter>GLVertexBufferObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLShader\GLShader.h">
+      <Filter>GLShader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

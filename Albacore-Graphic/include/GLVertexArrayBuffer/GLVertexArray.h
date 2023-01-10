@@ -5,9 +5,10 @@
  */
 
 #pragma once
+#include <GLAD/include/glad/glad.h>
 #include <GLIndexBuffer/GLIndexBuffer.h>
 #include <GLVertexBuffer/GLVertexBuffer.h>
-#include <GLAD/include/glad/glad.h>
+
 #include <memory>
 #include <vector>
 #include<GLHandle/GLHandle.h>

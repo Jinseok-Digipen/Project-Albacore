@@ -3,7 +3,7 @@
  * CS200
  * Fall 2022
  */
-
+#pragma once
 #include <Imgui/ImguiHelper.h>
 #include <Imgui/imgui.h>
 #include <Imgui/imgui_impl_opengl3.h>

@@ -4,6 +4,7 @@
  * CS200
  * Fall 2022
  */
+#include<GLAD/include/glad/glad.h>
 #include<GLFW/glfw3.h>
 
 #ifdef  DLL_EXPORTS

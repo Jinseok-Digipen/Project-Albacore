@@ -16,6 +16,7 @@
     <ClCompile Include="include\color\color.cpp" />
     <ClCompile Include="include\Imgui\ImguiHelper.cpp" />
     <ClCompile Include="source\GLIndexBuffer\GLIndexBuffer.cpp" />
+    <ClCompile Include="source\GLShader\GLShader.cpp" />
     <ClCompile Include="source\GLVertexArrayBuffer\GLVertexArray.cpp" />
     <ClCompile Include="source\GLVertexBuffer\GLVertexBuffer.cpp" />
     <ClCompile Include="source\Imgui\imgui.cpp" />
@@ -34,6 +35,7 @@
     <ClInclude Include="include\check\check.h" />
     <ClInclude Include="include\color\color.h" />
     <ClInclude Include="include\GLIndexBuffer\GLIndexBuffer.h" />
+    <ClInclude Include="include\GLShader\GLShader.h" />
     <ClInclude Include="include\GLVertexArrayBuffer\GLVertexArray.h" />
     <ClInclude Include="include\GLVertexBuffer\GLVertexBuffer.h" />
     <ClInclude Include="include\Imgui\imconfig.h" />
@@ -85,8 +87,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>$(SolutionDir)\external\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)\external\include;$(ProjectDir)\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Assets\shader;$(IncludePath)</IncludePath>
     <SourcePath>$(SolutionDir)\external\include\src;$(ProjectDir)\external\source;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)\Assets\shader;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -105,6 +110,10 @@
       <IgnoreSpecificDefaultLibraries>doodle.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y/d/i/e "$(SolutionDir)external" "$(TargetDir)external\"
+xcopy /y/d/i/e "$(SolutionDir)Assets"  "$(TargetDir)Assets\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -125,6 +134,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y/d/i/e "$(SolutionDir)external" "$(TargetDir)external\"
+xcopy /y/d/i/e "$(SolutionDir)Assets"  "$(TargetDir)Assets\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

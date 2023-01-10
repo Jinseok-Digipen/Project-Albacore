@@ -1,10 +1,16 @@
 //Name : Jinseok Son
 //Date : 1/3/2023 
 //Description : Graphic Engine Window File
+#pragma once
 #include<unordered_map>
 #include<string>
-#pragma once
-
+//#include<GLShader/GLShader.h>
+#include<iostream>
+#include<check/check.h>
+#include<Imgui/ImguiHelper.h>
+#include<Imgui/imgui.h>
+#include<string>
+#include<GLShader/GLShader.h>
 #ifdef  DLL_EXPORTS
 #define ALBACORE_GRAPHIC_DECLSPEC __declspec(dllexport)
 #else
@@ -26,7 +32,7 @@ namespace Albacore
 		 ALBACORE_GRAPHIC_DECLSPEC ~Window();
 		 inline static ALBACORE_GRAPHIC_DECLSPEC GLFWwindow* WindowPtr = nullptr;
 	private:
-
+		inline static ALBACORE_GRAPHIC_DECLSPEC  GLShader shader;
 		inline static ALBACORE_GRAPHIC_DECLSPEC  std::unordered_map <std::string, std::string>settings_descriptions;
 		
 	};

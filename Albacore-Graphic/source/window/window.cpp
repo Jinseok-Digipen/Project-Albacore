@@ -1,12 +1,8 @@
+
+#pragma once
+
 #include<window/window.h>
-#include<GLAD/include/glad/glad.h>
-#include<GLFW/glfw3.h>
-#include<iostream>
-#include<check/check.h>
-#include<Imgui/ImguiHelper.h>
-#include<Imgui/imgui.h>
-#include<GLAD/include/glad/glad.h>
-#include<string>
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -19,8 +15,8 @@ bool  Albacore::Window::create_window()
     // glfw: initialize and configure
      // ------------------------------
     glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // glfw window creation
@@ -43,6 +39,18 @@ bool  Albacore::Window::create_window()
         return false;
 
     }
+
+
+
+    shader = GLShader("Basic Shader",
+        { {GLShader::VERTEX, "Assets/shader/pass_thru_pos2d_clr.vert"},
+        {GLShader::FRAGMENT, "Assets/shader/basic_vtx_clr_attribute.frag"} });
+
+   
+
+    
+  
+
 #ifdef _DEBUG
         ImGuiHelper::Initialize(WindowPtr);
 #endif 
@@ -132,6 +140,12 @@ bool  Albacore::Window::create_window()
         }
 
         std::cout << std::boolalpha << GL_DOUBLEBUFFER_KEY << " " << static_cast<bool>(GL_MAX_TEXTURE_SIZE_V) << '\n';
+
+
+
+       /* shader = GLShader("Basic Shader",
+            { {GLShader::VERTEX, "assets/shaders/pass_thru_pos2d_clr.vert"},
+            {GLShader::FRAGMENT, "assets/shaders/basic_vtx_clr_attribute.frag"} });*/
 
 
 //#ifdef _DEBUG
