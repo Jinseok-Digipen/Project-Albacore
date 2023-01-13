@@ -15,7 +15,7 @@ int main()
 		Albacore::HexColor HexTest{ 0xFF00FFFF };
 		Albacore::clear_background(HexTest);
 		Albacore::Window::print_spec("Program Info");
-
+		Albacore::Window::ShaderSelecter();
 		//ImGui::ShowDemoWindow();
 		#ifdef  _DEBUG
 		ImGuiHelper::End(Albacore::Window::WindowPtr);

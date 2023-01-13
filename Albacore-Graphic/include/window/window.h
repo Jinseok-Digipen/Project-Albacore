@@ -28,15 +28,16 @@ namespace Albacore
 		 static  void  ALBACORE_GRAPHIC_DECLSPEC update_window();
 		 static  bool  ALBACORE_GRAPHIC_DECLSPEC is_window_closed();
 		 static  void  ALBACORE_GRAPHIC_DECLSPEC print_spec(std::string windowname);
-		
+		 static  void  ALBACORE_GRAPHIC_DECLSPEC ShaderSelecter();
 		
 		 ALBACORE_GRAPHIC_DECLSPEC ~Window();
 		 inline static ALBACORE_GRAPHIC_DECLSPEC GLFWwindow* WindowPtr = nullptr;
 	private:
-		inline static ALBACORE_GRAPHIC_DECLSPEC  std::vector<GLShader>shaders;
+		inline static ALBACORE_GRAPHIC_DECLSPEC  std::map<std::string,GLShader>shaders;
 		inline static ALBACORE_GRAPHIC_DECLSPEC  std::vector<GLVertexArray>model;
 		inline static ALBACORE_GRAPHIC_DECLSPEC  std::unordered_map <std::string, std::string>settings_descriptions;
 		inline static ALBACORE_GRAPHIC_DECLSPEC  std::map<std::string, bool>shader_options;
+		inline static ALBACORE_GRAPHIC_DECLSPEC  std::string current_shader;
 	};
 }
 

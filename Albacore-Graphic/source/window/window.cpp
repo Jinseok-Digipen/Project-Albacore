@@ -118,9 +118,11 @@ bool  Albacore::Window::create_window()
 
 	std::cout << std::boolalpha << GL_DOUBLEBUFFER_KEY << " " << static_cast<bool>(GL_MAX_TEXTURE_SIZE_V) << '\n';
 
-	shaders.push_back(GLShader("Basic Shader1", { {GLShader::VERTEX, "Assets/shader/pass_thru_pos2d_clr.vert"}, {GLShader::FRAGMENT, "Assets/shader/basic_vtx_clr_attribute.frag"} }));
-	shaders.push_back(GLShader("Basic Shader2", { {GLShader::VERTEX, "Assets/shader/pass_thru_pos2d_clr.vert"}, {GLShader::FRAGMENT, "Assets/shader/basic_vtx_clr_attribute.frag"} }));
-	shaders.push_back(GLShader("Basic Shader3", { {GLShader::VERTEX, "Assets/shader/pass_thru_pos2d_clr.vert"}, {GLShader::FRAGMENT, "Assets/shader/basic_vtx_clr_attribute.frag"} }));
+	
+
+	shaders["Basic Shader1"] = GLShader("Basic Shader1", { {GLShader::VERTEX, "Assets/shader/pass_thru_pos2d_clr.vert"}, {GLShader::FRAGMENT, "Assets/shader/basic_vtx_clr_attribute.frag"} });
+	shaders["Basic Shader2"] = GLShader("Basic Shader2", { {GLShader::VERTEX, "Assets/shader/idiot.vert"}, {GLShader::FRAGMENT, "Assets/shader/idiot.frag"} });
+	current_shader = "Basic Shader1";
 
 	constexpr std::array positions = { vec2{-0.2f, 0.2f}, vec2{-0.2f, 0.6f}, vec2{-0.6f, 0.6f}, vec2{-0.6f, 0.2f} };
 	constexpr auto       positions_byte_size = static_cast<long long>(sizeof(vec2) * positions.size());
@@ -175,11 +177,11 @@ void Albacore::Window::update_window()
 {
 
 	glfwPollEvents();
-	shaders[0].Use();
+	shaders[current_shader].Use();
 	model[0].Use();
 	GLDrawIndexed(model[0]);
 	model[0].Use(false);
-	shaders[0].Use(false);
+	shaders[current_shader].Use(false);
 	glfwSwapBuffers(WindowPtr);
 
 
@@ -213,18 +215,14 @@ void Albacore::Window::print_spec(std::string window_name)
 	ImGui::End();
 
 
-	//ImGui::Begin("Shader");
-	//{
-	//	//ImGui::LabelText("FPS", "%.1f", timing.fps);
-	//	for (auto& options : shader_options)
-	//	{
-	//		ImGui::Checkbox(options.first.c_str(), &options.second);
-	//	}
+#endif // _DEBUG
+}
 
-	//}
-	//ImGui::End();
+void Albacore::Window::ShaderSelecter()
+{
+#ifdef _DEBUG
 	static ImGuiComboFlags flags = 0;
-	const char* items[] = { "Shader1","Shader2"};
+	const char* items[] = { "Basic Shader1","Basic Shader2" };
 	static int item_current_idx = 0; // Here we store our selection data as an index.
 	const char* combo_preview_value = items[item_current_idx];  // Pass in the preview value visible before opening the combo (it could be anything)
 	if (ImGui::BeginCombo("combo 1", combo_preview_value, flags))
@@ -234,19 +232,17 @@ void Albacore::Window::print_spec(std::string window_name)
 			const bool is_selected = (item_current_idx == n);
 			if (ImGui::Selectable(items[n], is_selected))
 				item_current_idx = n;
-
 			// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
 			if (is_selected)
 				ImGui::SetItemDefaultFocus();
+
+
 		}
+		current_shader = items[item_current_idx];
 		ImGui::EndCombo();
 	}
-
-	
-
-#endif // _DEBUG
+#endif //  _DEBUG
 }
-
 
 
 Albacore::Window::~Window()
