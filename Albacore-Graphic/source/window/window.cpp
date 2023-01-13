@@ -192,13 +192,9 @@ bool Albacore::Window::is_window_closed()
 	return glfwWindowShouldClose(WindowPtr);
 }
 
-bool bool_hi = false;
 void Albacore::Window::print_spec(std::string window_name)
 {
-
-
-
-	
+		
 
 #ifdef _DEBUG
 
@@ -225,7 +221,9 @@ void Albacore::Window::ShaderSelecter()
 	const char* items[] = { "Basic Shader1","Basic Shader2" };
 	static int item_current_idx = 0; // Here we store our selection data as an index.
 	const char* combo_preview_value = items[item_current_idx];  // Pass in the preview value visible before opening the combo (it could be anything)
-	if (ImGui::BeginCombo("combo 1", combo_preview_value, flags))
+	
+	ImGui::Begin("Shader Selector");
+	if (ImGui::BeginCombo("ShaderList", combo_preview_value, flags))
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(items); n++)
 		{
@@ -241,6 +239,8 @@ void Albacore::Window::ShaderSelecter()
 		current_shader = items[item_current_idx];
 		ImGui::EndCombo();
 	}
+	ImGui::End();
+	
 #endif //  _DEBUG
 }
 
