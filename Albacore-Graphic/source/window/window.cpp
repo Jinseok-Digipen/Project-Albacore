@@ -20,6 +20,10 @@ const unsigned int SCR_HEIGHT = 600;
 
 bool  Albacore::Window::create_window()
 {
+	
+
+
+
 	// glfw: initialize and configure
 	 // ------------------------------
 	glfwInit();
@@ -176,12 +180,15 @@ bool  Albacore::Window::create_window()
 void Albacore::Window::update_window()
 {
 
-	glfwPollEvents();
+	Debugger_Count = 0;
 	shaders[current_shader].Use();
 	model[0].Use();
 	GLDrawIndexed(model[0]);
 	model[0].Use(false);
 	shaders[current_shader].Use(false);
+
+
+	glfwPollEvents();
 	glfwSwapBuffers(WindowPtr);
 
 
@@ -192,37 +199,52 @@ bool Albacore::Window::is_window_closed()
 	return glfwWindowShouldClose(WindowPtr);
 }
 
+void ALBACORE_GRAPHIC_DECLSPEC Albacore::Window::UseDebugger()
+{
+	if (Debugger_Count == 0)
+	{
+		Albacore::Window::print_spec("ProgramInfo##");
+		Albacore::Window::ShaderSelecter();
+		Debugger_Count++;
+	}
+}
+
 void Albacore::Window::print_spec(std::string window_name)
 {
 		
-
-#ifdef _DEBUG
+	static int number_of_costly_calls = 0;
+	
 
 	ImGui::Begin(window_name.c_str());
 	{
+		ImGui::PushID(number_of_costly_calls);
 		//ImGui::LabelText("FPS", "%.1f", timing.fps);
 
 		for (const auto& [label, description] : settings_descriptions)
 		{
 			ImGui::LabelText(label.c_str(), "%s", description.c_str());
 		}
-		
+		ImGui::PopID();
 	}
 	ImGui::End();
 
 
-#endif // _DEBUG
+	number_of_costly_calls++;
+
 }
 
 void Albacore::Window::ShaderSelecter()
 {
-#ifdef _DEBUG
+
 	static ImGuiComboFlags flags = 0;
 	const char* items[] = { "Basic Shader1","Basic Shader2" };
 	static int item_current_idx = 0; // Here we store our selection data as an index.
 	const char* combo_preview_value = items[item_current_idx];  // Pass in the preview value visible before opening the combo (it could be anything)
 	
-	ImGui::Begin("Shader Selector");
+	int id = rand() % 10000;
+
+	ImGui::PushID(id);
+	ImGui::Begin("Shader Selector##");
 	if (ImGui::BeginCombo("ShaderList", combo_preview_value, flags))
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(items); n++)
@@ -240,9 +262,11 @@ void Albacore::Window::ShaderSelecter()
 		ImGui::EndCombo();
 	}
 	ImGui::End();
-	
-#endif //  _DEBUG
+	ImGui::PopID();
+
 }
+
+
 
 
 Albacore::Window::~Window()
@@ -264,3 +288,5 @@ void framebuffer_size_callback([[maybe_unused]] GLFWwindow* window, [[maybe_unus
 	// height will be significantly larger than specified on retina displays.
 	glViewport(0, 0, width, height);
 }
+
+

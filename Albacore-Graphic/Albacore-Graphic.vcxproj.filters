@@ -30,6 +30,9 @@
     <Filter Include="GLShader">
       <UniqueIdentifier>{d1ffe762-ac04-4570-864d-5a9a59c159f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic-Engine">
+      <UniqueIdentifier>{e8f237e1-851c-4ac8-8e04-8ecb0fd400ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\external\include\GLAD\src\glad.c">
