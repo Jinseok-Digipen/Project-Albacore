@@ -12,15 +12,15 @@ int main()
 		#ifdef _DEBUG
 		ImGuiHelper::Begin();
 		#endif
+
 		Albacore::HexColor HexTest{ 0xFF00FFFF };
 		Albacore::clear_background(HexTest);
-		Albacore::Window::print_spec("Program Info");
-		Albacore::Window::ShaderSelecter();
-		//ImGui::ShowDemoWindow();
+		Albacore::Window::UseDebugger();
+		Albacore::Window::UseDebugger();
+
 		#ifdef  _DEBUG
 		ImGuiHelper::End(Albacore::Window::WindowPtr);
-		#endif
-
+        #endif
 
 	    Albacore::Window::update_window();
 		
